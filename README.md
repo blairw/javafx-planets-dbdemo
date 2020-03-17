@@ -1,6 +1,9 @@
 # javafx-planets-dbdemo
 This is a very simple demo of how to work with a SQLite database in a JavaFX setting.
 
+## Running it yourself
+The codebase runs fine on both macOS and Windows. Please ensure that you **Clean and Build** in NetBeans before attempting to run.
+
 ## Significant files
 1. `App.java` - JavaFX main class.
 1. `DatabaseManager.java` - helper class to manage the SQLite JDBC connection so that no other class has to.
@@ -11,8 +14,8 @@ This is a very simple demo of how to work with a SQLite database in a JavaFX set
 ## Significant parts of `DatabaseManager.java`
 1. `openConnection()` and `closeConnection()` are just convenient wrappers around the JDBC open/close connection cycle.
 1. `createTheOnlyTableWeNeed()` and `setupDummyData()` perform the two steps required for initial setup. The first one uses a `Statement` and the second one uses multiple instances of `PreparedStatement`, so they are a great demonstration of the difference between the two. They are only used if required, by...
-1. `setupDatabaseOnFirstRun()`, which first checks if the database is already there.
-1. `fetchPlanetByName(...)`, the method invoked by the GUI when the user clicks the **Retrieve Size** button.
+1. `setupDatabaseOnFirstRun()`, which first checks if the database is already there. This is called from `App.java` right after the GUI is launched.
+1. `fetchPlanetByName(...)`, the method invoked by the GUI when the user clicks the **Retrieve Size** button. This is called from `PrimaryController.java` as part of the handler for the button.
 
 ## What does the program actually do?
 1. On first launch, we set up a database of planets and their sizes (see `DatabaseManager.setupDatabaseOnFirstRun()`).
