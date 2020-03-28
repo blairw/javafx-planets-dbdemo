@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="480.0" prefWidth="640.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="au.edu.unsw.business.infs2605.fxdbdemo.SecondaryController">
+    <children>
+        <ToolBar prefHeight="40.0" prefWidth="200.0">
+          <items>
+              <Label text="Secondary View">
+                 <padding>
+                    <Insets right="50.0" />
+                 </padding></Label>
+              <Button fx:id="secondaryButton" onAction="#switchToPrimary" text="Switch to Primary View" />
+          </items>
+        </ToolBar>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TableView fx:id="tblPlanets" layoutX="14.0" layoutY="14.0" prefHeight="397.0" prefWidth="612.0" AnchorPane.topAnchor="0.0">
+              <columns>
+                <TableColumn fx:id="colPlanetName" prefWidth="111.0" text="Planet Name" />
+                <TableColumn fx:id="colPlanetSize" prefWidth="142.0" text="Planet Size" />
+              </columns>
+            </TableView>
+         </children></AnchorPane>
+    </children>
+</VBox>
